@@ -1,28 +1,10 @@
 cc_library_headers {
     name: "display_intf_headers",
     vendor_available: true,
-    defaults: ["gralloc_selector"],
     export_include_dirs: [
         "gralloc",
         "include",
         "libqdmetadata",
         "services",
     ],
-}
-
-bootstrap_go_package {
-    name: "soong-gralloc_selector",
-    pkgPath: "android/soong/gralloc_selector",
-    deps: [
-        "soong-android",
-        "soong-cc",
-    ],
-    srcs: [
-        "gralloc_selector.go"
-    ],
-    pluginFor: ["soong_build"],
-}
-
-gralloc_selector {
-    name: "gralloc_selector",
 }
